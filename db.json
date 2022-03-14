@@ -1,0 +1,119 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "TITLE 111 43wdaaw",
+      "text": "Lorem ispuawdwms sovnf pidrnv rudo bdirnobrdibrn",
+      "category": 1
+    },
+    {
+      "title": "TITLE 3 updated64",
+      "text": "e5ggdgdrgrgr",
+      "id": 4,
+      "category": 2
+    },
+    {
+      "title": "A@$A45dawdw",
+      "text": "awdawdwaw",
+      "id": 6,
+      "category": 3
+    },
+    {
+      "title": "4f4f4f4ff4ff",
+      "text": "esfesfsefsfsfe",
+      "category": 2,
+      "id": 8
+    },
+    {
+      "title": "aWDwdawadw",
+      "text": "dwdwwddwwd",
+      "category": 2,
+      "id": 9
+    },
+    {
+      "title": "fsefsfsefs",
+      "text": "fsefsfsefe",
+      "category": 5,
+      "id": 15
+    },
+    {
+      "title": "fesfesfsfs",
+      "text": "sefesfsse",
+      "category": 3,
+      "id": 16
+    },
+    {
+      "title": "AWDAWdawd",
+      "text": "awddwd",
+      "category": 5,
+      "id": 17
+    },
+    {
+      "title": "dawdaawdawdw",
+      "text": "daqwd",
+      "category": 3,
+      "id": 18
+    },
+    {
+      "title": "FWAFEAWFEAF",
+      "text": "23232323",
+      "category": 1,
+      "id": 19
+    },
+    {
+      "title": "dawdaawdwad",
+      "text": "d2312312321",
+      "category": 2,
+      "id": 20
+    },
+    {
+      "title": "dfvvsee",
+      "text": "vesesves3",
+      "category": 3,
+      "id": 21
+    },
+    {
+      "title": "gesgse",
+      "text": "gsgeeg",
+      "category": 3,
+      "id": 22
+    },
+    {
+      "title": "dawdaawd",
+      "text": "awdwadawdaw",
+      "category": 2,
+      "id": 23
+    },
+    {
+      "title": "dawdawd",
+      "text": "awdawdawd",
+      "category": 2,
+      "id": 24
+    },
+    {
+      "title": "novi post",
+      "text": "dawdawdawdw",
+      "category": 2,
+      "id": 25
+    },
+    {
+      "title": "FAWFWF",
+      "text": "23232",
+      "category": 2,
+      "id": 26
+    },
+    {
+      "title": "adwdawda",
+      "text": "dawdadaw",
+      "category": 4,
+      "id": 27
+    }
+  ],
+  "categories": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+}
