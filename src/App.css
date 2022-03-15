@@ -213,7 +213,7 @@ label {
 }
 .nav-main {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
 }
 .nav-main ul {
   list-style: none;
@@ -229,6 +229,7 @@ label {
     padding: 10rem 2rem;
     transform: translateX(100%);
     transition: transform 250ms ease-out;
+    align-items: flex-start;
   }
   .nav-main.open {
     transform: translateX(0);
