@@ -6,10 +6,22 @@ import BlogItem from "./BlogItem";
 function Home() {
   const posts = useSelector((state) => state.blog.posts);
   const isLoading = useSelector((state) => state.blog.isLoading);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllPosts());
   }, [dispatch]);
+
+  if (isLoading) {
+    return (
+      <div className="main">
+        <div className="container">
+          <div class="loader"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="main">
       <div className="container">

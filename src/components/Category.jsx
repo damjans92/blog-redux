@@ -8,10 +8,21 @@ function Category() {
   const dispatch = useDispatch();
   const { categoryId } = useParams();
   const posts = useSelector((state) => state.blog.posts);
+  const isLoading = useSelector((state) => state.blog.isLoading);
 
   useEffect(() => {
     dispatch(getPostsByCategory(categoryId));
   }, [dispatch, categoryId]);
+
+  if (isLoading) {
+    return (
+      <div className="main">
+        <div className="container">
+          <div class="loader"></div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="main">
