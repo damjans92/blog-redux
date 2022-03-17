@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 import { FaWindowClose } from "react-icons/fa";
 
@@ -36,5 +37,11 @@ function Modal({ children, show, onClose }) {
     document.getElementById("portal")
   );
 }
+
+Modal.propTypes = {
+  children: PropTypes.node,
+  show: PropTypes.bool,
+  onClose: PropTypes.func,
+};
 
 export default Modal;

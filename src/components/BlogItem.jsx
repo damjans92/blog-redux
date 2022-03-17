@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { deletePost } from "../redux/blogSlice";
-
+import PropTypes from "prop-types";
 import EditPost from "./EditPost";
 
 function BlogItem({ id, title, text, category }) {
@@ -26,5 +26,12 @@ function BlogItem({ id, title, text, category }) {
     </article>
   );
 }
+
+BlogItem.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  category: PropTypes.number,
+};
 
 export default BlogItem;

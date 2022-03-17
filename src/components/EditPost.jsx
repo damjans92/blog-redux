@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import Modal from "./Modal";
 import FormEditPost from "./Forms/FormEditPost";
 
@@ -21,6 +22,13 @@ const EditPost = ({ postId, postTitle, postText, postCategory }) => {
       </Modal>
     </>
   );
+};
+
+EditPost.propTypes = {
+  postId: PropTypes.number,
+  postTitle: PropTypes.string,
+  postText: PropTypes.string,
+  postCategory: PropTypes.number,
 };
 
 export default EditPost;

@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { editPost } from "../../redux/blogSlice";
+import PropTypes from "prop-types";
 import useForm from "../../hooks/useForm";
 import validate from "../../hooks/validatePostData";
 
@@ -73,6 +74,13 @@ const FormEditPost = ({ postId, postTitle, postText, postCategory }) => {
       </form>
     </>
   );
+};
+
+FormEditPost.propTypes = {
+  postId: PropTypes.number,
+  postTitle: PropTypes.string,
+  postText: PropTypes.string,
+  postCategory: PropTypes.number,
 };
 
 export default FormEditPost;

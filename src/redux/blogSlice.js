@@ -98,6 +98,7 @@ const initialState = {
   isLoading: false,
   isModalOpen: false,
   messageSuccess: "",
+  messageError: "",
 };
 
 export const blogSlice = createSlice({
@@ -116,6 +117,10 @@ export const blogSlice = createSlice({
     [getAllPosts.pending]: (state) => {
       state.isLoading = true;
     },
+    [getAllPosts.rejected]: (state) => {
+      state.isLoading = false;
+      state.messageError = "Fetching posts failed";
+    },
     [getAllPosts.fulfilled]: (state, action) => {
       state.posts = action.payload;
       state.isLoading = false;
@@ -123,6 +128,10 @@ export const blogSlice = createSlice({
     },
     [searchPosts.pending]: (state) => {
       state.isLoading = true;
+    },
+    [searchPosts.rejected]: (state) => {
+      state.isLoading = false;
+      state.messageError = "Fetching posts failed";
     },
     [searchPosts.fulfilled]: (state, action) => {
       state.posts = action.payload;
