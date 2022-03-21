@@ -55,8 +55,7 @@ button {
   display: flex;
 }
 .logo {
-  color: #fff;
-  font-style: ;
+  color: rgb(255, 233, 137);
 }
 .search-input {
   display: inline-flex;
@@ -223,6 +222,7 @@ label {
 .nav-main {
   display: inline-flex;
   align-items: center;
+  color: rgb(255, 233, 137);
 }
 .nav-main ul {
   list-style: none;
