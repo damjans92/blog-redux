@@ -213,6 +213,7 @@ label {
   display: none;
   z-index: 9999;
   background-color: transparent;
+  color: rgb(255, 233, 137);
   border: 0;
 }
 .toggle-nav svg {
@@ -233,7 +234,8 @@ label {
 @media (max-width: 768px) {
   .nav-main {
     position: fixed;
-    background-color: aliceblue;
+    background-color: var(--primary-color);
+    box-shadow: -2px 0px 8px 0px rgb(0 0 0 / 30%);
     inset: 0 0 0 30%;
     padding: 10rem 2rem;
     transform: translateX(100%);
@@ -248,8 +250,6 @@ label {
   }
   .toggle-nav {
     display: block;
-    /* position: absolute;
-    right: 15px; */
   }
 }
 .btn {

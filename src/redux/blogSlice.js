@@ -148,7 +148,6 @@ export const blogSlice = createSlice({
     [getAllCategories.fulfilled]: (state, action) => {
       state.categories = action.payload;
       state.isLoading = false;
-      console.log("Categories fetched successfully!");
     },
     [getAllCategories.rejected]: (state, action) => {
       state.isLoading = false;
@@ -161,7 +160,6 @@ export const blogSlice = createSlice({
     [getPostsByCategory.fulfilled]: (state, action) => {
       state.posts = action.payload;
       state.isLoading = false;
-      console.log("Fetched successfully!");
     },
     [getPostsByCategory.rejected]: (state, action) => {
       state.isLoading = false;
@@ -172,7 +170,6 @@ export const blogSlice = createSlice({
       console.log("Add new post pending...");
     },
     [addNewPost.fulfilled]: (state, action) => {
-      console.log(action.payload);
       state.posts.push(action.payload);
       state.messageSuccess = "New post added!";
     },
@@ -181,8 +178,6 @@ export const blogSlice = createSlice({
     },
 
     [deletePost.fulfilled]: (state, action) => {
-      console.log("Post deleted!");
-      console.log(action.payload);
       state.posts = state.posts.filter((post) => post.id !== action.payload.id);
       state.messageSuccess = "Post deleted!";
     },
@@ -191,8 +186,6 @@ export const blogSlice = createSlice({
     },
 
     [editPost.fulfilled]: (state, action) => {
-      console.log("Post edited!");
-      console.log(action.payload);
       let updatedPost = action.payload;
       let postIndex = state.posts.findIndex(
         (post) => post.id === updatedPost.id
