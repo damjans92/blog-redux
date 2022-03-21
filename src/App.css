@@ -12,7 +12,8 @@ a {
 
 :root {
   --radius: 3px;
-  --primary-color: rgb(223 229 235);
+  --primary-color: rgb(0 155 216);
+  --secondary-color: rgb(223 229 235);
 }
 
 body {
@@ -38,13 +39,11 @@ button {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
 .header {
   grid-area: header;
 }
 .header-top {
   background-color: var(--primary-color);
-  border: 1px solid rgb(204, 204, 204);
   height: 72px;
   display: flex;
   justify-content: space-between;
@@ -54,6 +53,10 @@ button {
 }
 .header-right {
   display: flex;
+}
+.logo {
+  color: #fff;
+  font-style: ;
 }
 .search-input {
   display: inline-flex;
@@ -90,6 +93,12 @@ button {
   margin-right: 10px;
   vertical-align: middle;
 }
+.error-icon {
+  color: #cb0f0f;
+  display: inline-flex;
+  margin-right: 10px;
+  vertical-align: middle;
+}
 .close-icon {
   position: absolute;
   top: 3px;
@@ -98,7 +107,7 @@ button {
   cursor: pointer;
 }
 .sidebar {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   grid-area: sidebar;
   border-radius: var(--radius);
   padding: 2rem 1rem;

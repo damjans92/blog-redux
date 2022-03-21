@@ -16,7 +16,7 @@ function Header() {
       <div className="header-top">
         <div className="logo">
           <Link to="/">
-            <h1>BLOG</h1>
+            <h1>blog</h1>
           </Link>
         </div>
         <div className="header-right">

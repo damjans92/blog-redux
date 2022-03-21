@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": 1,
-      "title": "TITLE 111 43wdaaw",
+      "title": "TITLE 111 fseefsef",
       "text": "Lorem ispuawdwms sovnf pidrnv rudo bdirnobrdibrn",
       "category": 1
     },
@@ -37,60 +37,6 @@
       "id": 15
     },
     {
-      "title": "fesfesfsfs",
-      "text": "sefesfsse",
-      "category": 3,
-      "id": 16
-    },
-    {
-      "title": "AWDAWdawd",
-      "text": "awddwd",
-      "category": 5,
-      "id": 17
-    },
-    {
-      "title": "dawdaawdawdw",
-      "text": "daqwd",
-      "category": 3,
-      "id": 18
-    },
-    {
-      "title": "FWAFEAWFEAF",
-      "text": "23232323",
-      "category": 1,
-      "id": 19
-    },
-    {
-      "title": "dawdaawdwad",
-      "text": "d2312312321",
-      "category": 2,
-      "id": 20
-    },
-    {
-      "title": "dfvvsee",
-      "text": "vesesves3",
-      "category": 3,
-      "id": 21
-    },
-    {
-      "title": "gesgse",
-      "text": "gsgeeg",
-      "category": 3,
-      "id": 22
-    },
-    {
-      "title": "dawdaawd",
-      "text": "awdwadawdaw",
-      "category": 2,
-      "id": 23
-    },
-    {
-      "title": "dawdawd",
-      "text": "awdawdawd",
-      "category": 2,
-      "id": 24
-    },
-    {
       "title": "novi post",
       "text": "dawdawdawdw",
       "category": 2,
@@ -107,6 +53,12 @@
       "text": "dawdadaw",
       "category": 4,
       "id": 27
+    },
+    {
+      "title": "FAWFAFfw",
+      "text": "222222222",
+      "category": 2,
+      "id": 28
     }
   ],
   "categories": [

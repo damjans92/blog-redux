@@ -1,99 +1,106 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import blogApi from "../components/api/blogApi";
 
-export const getAllPosts = createAsyncThunk("blog/getAllPosts", async () => {
-  try {
-    const response = await blogApi.get("/posts");
-    console.log(response.data);
-    return response.data;
-  } catch (error) {
-    console.log(error);
+export const getAllPosts = createAsyncThunk(
+  "blog/getAllPosts",
+  async (_, thunkAPI) => {
+    try {
+      const response = await blogApi.get("/posts");
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
-});
+);
 
 export const searchPosts = createAsyncThunk(
   "blog/searchPosts",
-  async (searchTerm) => {
+  async (searchTerm, thunkAPI) => {
     try {
       const response = await blogApi.get(`/posts?q=${searchTerm}`);
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
-      console.log(error);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
 export const getAllCategories = createAsyncThunk(
   "blog/getAllCategories",
-  async () => {
+  async (_, thunkAPI) => {
     try {
       const response = await blogApi.get("/categories");
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
-      console.log(error);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
 export const getPostsByCategory = createAsyncThunk(
   "blog/getPostsByCategory",
-  async (catId) => {
+  async (catId, thunkAPI) => {
     try {
       const response = await blogApi.get(`/posts?category=${catId}`);
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
-      console.log(error);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
 export const addNewPost = createAsyncThunk(
   "blog/addNewPost",
-  async (payload) => {
+  async (payload, thunkAPI) => {
     try {
       const response = await blogApi.post("/posts", {
         title: payload.title,
         text: payload.text,
         category: payload.category,
       });
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
-      console.log(error);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
-export const deletePost = createAsyncThunk("blog/deletePost", async (id) => {
-  try {
-    const response = await blogApi.delete(`/posts/${id}`);
+export const deletePost = createAsyncThunk(
+  "blog/deletePost",
+  async (id, thunkAPI) => {
+    try {
+      const response = await blogApi.delete(`/posts/${id}`);
 
-    console.log("deletePost " + response);
-    return { id };
-  } catch (error) {
-    console.log(error);
+      return { id };
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
-});
+);
 
-export const editPost = createAsyncThunk("blog/editPost", async (payload) => {
-  try {
-    const response = await blogApi.patch(`/posts/${payload.id}`, {
-      title: payload.title,
-      text: payload.text,
-    });
-    console.log(response.data);
-    return response.data;
-  } catch (error) {
-    console.log(error);
+export const editPost = createAsyncThunk(
+  "blog/editPost",
+  async (payload, thunkAPI) => {
+    try {
+      const response = await blogApi.patch(`/posts/${payload.id}`, {
+        title: payload.title,
+        text: payload.text,
+      });
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
-});
+);
 
 const initialState = {
   posts: [],
-  postsByCat: [],
   categories: [],
   isLoading: false,
   isModalOpen: false,
@@ -105,47 +112,49 @@ export const blogSlice = createSlice({
   name: "blog",
   initialState,
   reducers: {
-    toggleModal: (state, action) => {
-      console.log("toggle modal");
-      state.isModalOpen = action.payload;
-    },
     clearNotificationMsg: (state) => {
       state.messageSuccess = "";
+      state.messageError = "";
     },
   },
   extraReducers: {
     [getAllPosts.pending]: (state) => {
       state.isLoading = true;
     },
-    [getAllPosts.rejected]: (state) => {
-      state.isLoading = false;
-      state.messageError = "Fetching posts failed";
-    },
     [getAllPosts.fulfilled]: (state, action) => {
       state.posts = action.payload;
       state.isLoading = false;
-      state.messageSuccess = "Posts fetched successfully!";
     },
+    [getAllPosts.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.messageError = action.payload;
+    },
+
     [searchPosts.pending]: (state) => {
       state.isLoading = true;
-    },
-    [searchPosts.rejected]: (state) => {
-      state.isLoading = false;
-      state.messageError = "Fetching posts failed";
     },
     [searchPosts.fulfilled]: (state, action) => {
       state.posts = action.payload;
       state.isLoading = false;
-      state.messageSuccess = "Posts fetched successfully!";
     },
+    [searchPosts.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.messageError = "Search error: " + action.payload;
+    },
+
     [getAllCategories.pending]: (state) => {
       state.isLoading = true;
     },
     [getAllCategories.fulfilled]: (state, action) => {
       state.categories = action.payload;
       state.isLoading = false;
-      console.log("Fetched successfully!");
+      console.log("Categories fetched successfully!");
     },
+    [getAllCategories.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.messageError = "Fetching categories error: " + action.payload;
+    },
+
     [getPostsByCategory.pending]: (state) => {
       state.isLoading = true;
     },
@@ -154,6 +163,11 @@ export const blogSlice = createSlice({
       state.isLoading = false;
       console.log("Fetched successfully!");
     },
+    [getPostsByCategory.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.messageError = "Fetching posts error: " + action.payload;
+    },
+
     [addNewPost.pending]: (state) => {
       console.log("Add new post pending...");
     },
@@ -162,12 +176,20 @@ export const blogSlice = createSlice({
       state.posts.push(action.payload);
       state.messageSuccess = "New post added!";
     },
+    [addNewPost.rejected]: (state, action) => {
+      state.messageError = "Add post error: " + action.payload;
+    },
+
     [deletePost.fulfilled]: (state, action) => {
       console.log("Post deleted!");
       console.log(action.payload);
       state.posts = state.posts.filter((post) => post.id !== action.payload.id);
       state.messageSuccess = "Post deleted!";
     },
+    [deletePost.rejected]: (state, action) => {
+      state.messageError = "Delete post error: " + action.payload;
+    },
+
     [editPost.fulfilled]: (state, action) => {
       console.log("Post edited!");
       console.log(action.payload);
@@ -177,6 +199,9 @@ export const blogSlice = createSlice({
       );
       state.posts[postIndex] = updatedPost;
       state.messageSuccess = "Post updated!";
+    },
+    [editPost.rejected]: (state, action) => {
+      state.messageError = "Edit post error: " + action.payload;
     },
   },
 });

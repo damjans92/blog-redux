@@ -16,7 +16,7 @@ function Home() {
     return (
       <div className="main">
         <div className="container">
-          <div class="loader"></div>
+          <div className="loader"></div>
         </div>
       </div>
     );
