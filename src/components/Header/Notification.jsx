@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BsFillCheckSquareFill, BsFillXSquareFill } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";

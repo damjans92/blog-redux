@@ -74,7 +74,7 @@ export const deletePost = createAsyncThunk(
   "blog/deletePost",
   async (id, thunkAPI) => {
     try {
-      const response = await blogApi.delete(`/posts/${id}`);
+      await blogApi.delete(`/posts/${id}`);
 
       return { id };
     } catch (error) {
@@ -166,7 +166,7 @@ export const blogSlice = createSlice({
       state.messageError = "Fetching posts error: " + action.payload;
     },
 
-    [addNewPost.pending]: (state) => {
+    [addNewPost.pending]: () => {
       console.log("Add new post pending...");
     },
     [addNewPost.fulfilled]: (state, action) => {
