@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 const Navigation = ({ isOpen }) => {
   return (
     <nav className={isOpen ? "nav-main open" : "nav-main"}>
@@ -14,6 +17,10 @@ const Navigation = ({ isOpen }) => {
       </ul>
     </nav>
   );
+};
+
+Navigation.propTypes = {
+  isOpen: PropTypes.bool,
 };
 
 export default Navigation;

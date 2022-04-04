@@ -2,8 +2,8 @@
   "posts": [
     {
       "id": 1,
-      "title": "TITLE 111 fseefsef",
-      "text": "Lorem ispuawdwms sovnf pidrnv rudo bdirnobrdibrn",
+      "title": "Treba da kupim mleko",
+      "text": "AFAWFAWFAFwawFAWF",
       "category": 1
     },
     {
@@ -17,12 +17,6 @@
       "text": "awdawdwaw",
       "id": 6,
       "category": 3
-    },
-    {
-      "title": "4f4f4f4ff4ff",
-      "text": "esfesfsefsfsfe",
-      "category": 2,
-      "id": 8
     },
     {
       "title": "aWDwdawadw",
@@ -49,16 +43,22 @@
       "id": 26
     },
     {
-      "title": "adwdawda",
-      "text": "dawdadaw",
-      "category": 4,
-      "id": 27
-    },
-    {
       "title": "FAWFAFfw",
       "text": "222222222",
       "category": 2,
       "id": 28
+    },
+    {
+      "title": "AWDHWUIDhi",
+      "text": "waidnjiwdihwo",
+      "category": 2,
+      "id": 29
+    },
+    {
+      "title": "hgtfjhtytyf",
+      "text": "hygkhygyug",
+      "category": 2,
+      "id": 30
     }
   ],
   "categories": [
