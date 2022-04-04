@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch } from "react-redux";
 import { addNewPost } from "../../redux/blogSlice";
 import useForm from "../../hooks/useForm";

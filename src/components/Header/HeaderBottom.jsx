@@ -1,5 +1,4 @@
 import React from "react";
-
 import AddPost from "../AddPost";
 import Notification from "./Notification";
 
